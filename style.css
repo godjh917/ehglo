@@ -1,0 +1,162 @@
+/*
+Theme Name: Salient Child Theme
+Description: This is a custom child theme for Salient
+Theme URI:   https://themeforest.net/item/salient-responsive-multipurpose-theme/4363266
+Author: ThemeNectar
+Author URI:  https://themeforest.net/user/themenectar
+Template: salient
+Version: 1.0
+*/
+
+.nectar-highlighted-text em.animated {
+  background-size: 100% 100% !important;
+  padding: 0 6px !important;
+}
+
+/**
+ * * modal popup 
+ */
+ @keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+html:has(dialog[open]:modal) {
+  overflow: hidden;
+}
+
+dialog {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.5);
+  border: 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 70vw;
+  padding: 0;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 690px) {
+  dialog {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  dialog {
+    width: 90vw;
+  }
+  dialog#dialog_policy p {
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
+dialog#dialog_contact {
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 10px;
+}
+@media only screen and (min-width: 691px) {
+  dialog#dialog_contact {
+    width: 60vw;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  dialog#dialog_contact {
+    width: 40vw;
+  }
+}
+dialog#dialog_contact div.containers {
+  height: auto;
+  padding-bottom: 30px;
+}
+dialog#dialog_contact p {
+  padding-bottom: 1.5em;
+}
+dialog#dialog_contact input[type=text], dialog#dialog_contact input[type=tel] {
+  font-size: 16px !important;
+}
+dialog#dialog_contact input[type=submit] {
+  padding: 15px 35px !important;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+dialog[open] {
+  animation: slide-in 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+@media only screen and (max-width: 1300px) {
+  dialog div.space {
+    height: calc(110px - 10px) !important;
+  }
+  dialog div.containers {
+    margin-top: calc(110px - 10px) !important;
+  }
+}
+@media only screen and (max-width: 999px) {
+  dialog div.space {
+    height: calc(110px - 20px) !important;
+  }
+  dialog div.containers {
+    margin-top: calc(110px - 20px) !important;
+  }
+}
+dialog div.space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 110px;
+}
+dialog div.containers {
+  position: relative;
+  height: 70vh;
+  height: 70dvh;
+  padding: 0px 30px 15px;
+  overflow: auto;
+  margin-top: 110px;
+}
+@media only screen and (max-width: 480px) {
+  dialog div.containers {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+dialog div.containers h2 {
+  position: fixed;
+  top: 40px;
+}
+dialog div.containers span.close {
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+dialog div.containers span.close i {
+  font-size: 36px;
+}
+dialog div.containers p {
+  font-size: 15px;
+  line-height: 22px;
+  padding-bottom: 10px;
+}
+body.single-post .post-area h2.wp-block-heading {
+  background-color: #deb669;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
